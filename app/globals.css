@@ -4,74 +4,54 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* ── Brand palette (light) ────────────────────────── */
-  --background:           oklch(100% 0 0);           /* #FFFFFF */
-  --secondary-background: oklch(97% 0 0);
-  --foreground:           oklch(0% 0 0);             /* #000000 */
-  --main-foreground:      oklch(100% 0 0);           /* white text on blue */
-  --main:                 oklch(44.98% 0.27 264.05); /* #0057FF */
-  --border:               oklch(0% 0 0);
-  --ring:                 oklch(44.98% 0.27 264.05);
-  --overlay:              oklch(0% 0 0 / 0.8);
-  --shadow:               4px 4px 0px 0px var(--border);
+  /* ── Neobrutalism B&W palette (light) ────────────────── */
+  --background:            oklch(100% 0 0);          /* pure white */
+  --secondary-background:  oklch(96% 0 0);            /* off-white */
+  --foreground:            oklch(0% 0 0);             /* pure black */
+  --main:                  oklch(0% 0 0);             /* black CTA */
+  --main-foreground:       oklch(100% 0 0);           /* white on black */
+  --border:                oklch(0% 0 0);             /* black borders */
+  --ring:                  oklch(0% 0 0);
+  --overlay:               oklch(0% 0 0 / 0.7);
+  --shadow:                4px 4px 0px 0px oklch(0% 0 0);
 
-  /* ── Semantic ─────────────────────────────────────── */
-  --discount: #FFD600;
-  --verified: #22C55E;
-  --limited:  #FF3D00;
-  --brand:    #0057FF;
-
-  /* ── Charts ──────────────────────────────────────── */
-  --chart-1: #FFD600;
-  --chart-2: #0057FF;
-  --chart-3: #FF3D00;
-  --chart-4: #22C55E;
-  --chart-5: #000000;
-  --chart-active-dot: #000;
+  /* ── Semantic badge colors ────────────────────────────── */
+  --discount:              oklch(80% 0.21 60);        /* warm orange — works in light & dark */
+  --discount-foreground:   oklch(8% 0 0);             /* near-black text on orange, always */
+  --verified:              oklch(60% 0.19 145);       /* green  */
+  --limited:               oklch(54% 0.24 28);        /* red    */
 }
 
 .dark {
-  --background:           oklch(15% 0.015 264);
-  --secondary-background: oklch(20% 0.015 264);
-  --foreground:           oklch(95% 0 0);
-  --main-foreground:      oklch(100% 0 0);
-  --main:                 oklch(58% 0.24 264.05);
-  --border:               oklch(45% 0.02 264);
-  --ring:                 oklch(58% 0.24 264.05);
-  --overlay:              oklch(0% 0 0 / 0.8);
-  --shadow:               4px 4px 0px 0px var(--border);
+  --background:            oklch(8% 0 0);             /* near black */
+  --secondary-background:  oklch(14% 0 0);            /* dark grey */
+  --foreground:            oklch(95% 0 0);            /* near white */
+  --main:                  oklch(95% 0 0);            /* white CTA in dark */
+  --main-foreground:       oklch(0% 0 0);             /* black on white */
+  --border:                oklch(35% 0 0);            /* grey borders */
+  --ring:                  oklch(65% 0 0);
+  --overlay:               oklch(0% 0 0 / 0.8);
+  --shadow:                4px 4px 0px 0px var(--border);
 
-  --discount: #FFD600;
-  --verified: #22C55E;
-  --limited:  #FF3D00;
-  --brand:    #3B82F6;
-
-  --chart-1: #FFD600;
-  --chart-2: #3B82F6;
-  --chart-3: #FF3D00;
-  --chart-4: #22C55E;
-  --chart-5: #fff;
-  --chart-active-dot: #fff;
+  --discount:              oklch(78% 0.21 58);        /* slightly richer orange in dark */
+  --discount-foreground:   oklch(8% 0 0);             /* always dark text on orange */
+  --verified:              oklch(60% 0.19 145);
+  --limited:               oklch(54% 0.24 28);
 }
 
 @theme inline {
-  --color-main:                 var(--main);
-  --color-background:           var(--background);
-  --color-secondary-background: var(--secondary-background);
-  --color-foreground:           var(--foreground);
-  --color-main-foreground:      var(--main-foreground);
-  --color-border:               var(--border);
-  --color-overlay:              var(--overlay);
-  --color-ring:                 var(--ring);
-  --color-chart-1:              var(--chart-1);
-  --color-chart-2:              var(--chart-2);
-  --color-chart-3:              var(--chart-3);
-  --color-chart-4:              var(--chart-4);
-  --color-chart-5:              var(--chart-5);
-  --color-discount:             var(--discount);
-  --color-verified:             var(--verified);
-  --color-limited:              var(--limited);
-  --color-brand:                var(--brand);
+  --color-main:                  var(--main);
+  --color-background:            var(--background);
+  --color-secondary-background:  var(--secondary-background);
+  --color-foreground:            var(--foreground);
+  --color-main-foreground:       var(--main-foreground);
+  --color-border:                var(--border);
+  --color-overlay:               var(--overlay);
+  --color-ring:                  var(--ring);
+  --color-discount:              var(--discount);
+  --color-discount-foreground:   var(--discount-foreground);
+  --color-verified:              var(--verified);
+  --color-limited:               var(--limited);
 
   --spacing-boxShadowX:        4px;
   --spacing-boxShadowY:        4px;
@@ -93,7 +73,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid var(--brand);
+    outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
 }
@@ -103,8 +83,8 @@
   position: absolute;
   top: -100%;
   left: 0;
-  background: var(--brand);
-  color: #fff;
+  background: var(--main);
+  color: var(--main-foreground);
   padding: 0.5rem 1rem;
   font-weight: 700;
   z-index: 9999;
