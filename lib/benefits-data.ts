@@ -278,6 +278,24 @@ export const benefits: Benefit[] = [
   // SOFTWARE & PRODUCTIVITY
   // ═══════════════════════════════════════════════════════════════
   {
+    id: 'kilobat-student',
+    company: 'Kilobat',
+    iconKey: 'kilobat',
+    website: 'https://kilobat.app/students',
+    category: 'software',
+    title: 'Kilobat Pro for Students',
+    discount: 'FREE for 1 year',
+    discountPercent: 100,
+    description:
+      'Mac network diagnostics with Pro free for one year on two Macs, renewable while studying. Eligible students must be 13 or older and enrolled in a degree-granting program.',
+    howToClaim:
+      'Request a student license using a school email at kilobat.app/students. No payment or Kilobat account is required.',
+    verification: ['School email'],
+    tags: ['free'],
+    featured: false,
+    estimatedAnnualValue: 'Not estimated',
+  },
+  {
     id: 'adobe-cc',
     company: 'Adobe',
     iconKey: 'adobe',
